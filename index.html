@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expo Técnica Interactiva 2024</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <header>
+        <img src="logotecnica.jpg" alt="Logo Escuela" id="logo">
+        <h1>Expo Técnica Interactiva 2024</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#" onclick="showSection('inicio')">Inicio</a></li>
+            <li><a href="#" onclick="showSection('subir_proyecto')">Subir Proyecto</a></li>
+            <li><a href="#" onclick="showSection('votar_proyecto')">Votar Proyecto</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="inicio">
+            <h2>Bienvenidos a la Expo Técnica Interactiva 2024</h2>
+            <p>Descubre los proyectos innovadores de nuestros estudiantes y vota por tu favorito.</p>
+            <p id="visitas">Número de visitas: <span id="visit_count">0</span></p>
+            <h3>Proyectos más votados</h3>
+            <div id="top_projects">
+                <!-- Proyectos más votados -->
+            </div>
+        </section>
+        <section id="subir_proyecto" style="display: none;">
+            <h2>Sube tu Proyecto</h2>
+            <form id="uploadForm" action="server.php" method="post" enctype="multipart/form-data">
+                <label for="nombre">Nombre del Proyecto:</label>
+                <input type="text" id="nombre" name="nombre" required>
+                <label for="descripcion">Descripción:</label>
+                <textarea id="descripcion" name="descripcion" required></textarea>
+                <label for="imagen">Imagen:</label>
+                <input type="file" id="imagen" name="imagen" accept="image/*" required>
+                <button type="submit" name="submit_proyecto">Subir Proyecto</button>
+            </form>
+        </section>
+        <section id="votar_proyecto" style="display: none;">
+            <h2>Vota por tu Proyecto Favorito</h2>
+            <div id="lista_votacion">
+                <!-- Lista de proyectos para votar -->
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 E.E.S.T.N°1. Todos los derechos reservados.</p>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>
